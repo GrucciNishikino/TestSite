@@ -1,0 +1,136 @@
+<html id="element">
+<head onload=sound(src)>
+<title>Home</title>
+<link rel="icon" type="image/ico" href="logo.ico" sizes="32x32">
+<link id="swap" rel="stylesheet" type="text/css" href="stylesheet.css">
+<canvas id="titleCanvas" width="200" height="100"></canvas>
+<script>
+var mySound;
+
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = mySound;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+sleep(1000);
+var canvas = document.getElementById("titleCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "25px Consolas";
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.2,"orange");
+grd.addColorStop(0.4,"yellow");
+grd.addColorStop(0.6,"green");
+grd.addColorStop(0.8,"blue");
+grd.addColorStop(1,"purple");
+ctx.fillStyle=grd
+ctx.fillText("Super Crazy",5,30);
+ctx.fillText("Coding Maniac",15,60);
+ctx.fillText("Deluxe Site 4",5,90);
+</script>
+<ul>
+  <li><a class="active" href="Home.html">Home</a></li>
+  <li><a href="About.html">About</a></li>
+  <li><a href="Stupidity.html">Stupidity</a></li>
+  <li><a href="Games.html">Games</a></li>
+  <li><a href="actuallygoodtext.html">Text Demo</a></li>
+<button class="button" id="hiddenlink" style="display:none; color: #333; text-align: center; padding: 14px 16px;" onclick="alertstuff()">The Soviet Onion Orginization</button>
+</ul>
+<h2>Pong</h2>
+<script defer src="pong.js"></script>
+<p>Player 1: W and S. Player 2: I and K.</p>
+</head>
+<body>
+<canvas id="game" width="512" height="256" onload="gameStart()"></canvas>
+<h1>Welcome!</h1>
+<p id="change">Hello there! Welcome to a pointless website!</p>
+<br>
+<p id="demo"></p>
+<canvas id="myCanvas" width="200" height="100"
+style="border:1px solid #000000;">
+</canvas>
+<button class="button" onclick="myfunction()">Click Me!</button>
+<script>
+function gameStart() {
+	sleep(100);
+	var canvsa = document.getElementById("game");
+	var ctx = canvsa.getContext("2d");
+	ctx.fillStyle = "black";
+	ctx.beginPath();
+	ctx.fillRect(0, 0, 512, 256);
+	ctx.fill();
+}
+function myfunction() {
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#0000FF";
+ctx.fillRect(0,0,66,100);
+ctx.fillStyle = "#b82828";
+ctx.fillRect(133,0,200,100);
+ctx.fillStyle = "#399599";
+ctx.fillRect(66,0,67,100);
+ctx.beginPath();
+ctx.arc(99.5,50,33,0,2*Math.PI);
+ctx.fillStyle = "#E30B5D";
+ctx.fill();
+ctx.stroke();
+document.getElementById("change").innerHTML = "You have unlocked the secret. Go now, before they find you!";
+document.getElementById("hiddenlink").style.display="block";
+var element = document.getElementById('element');
+element.style.background = '#000000';
+}
+
+function alertstuff() {
+alert("We've found you. You can't hide from us. We will stop you, user.")
+var mySound;
+var d = new Date(); 
+var days = ["Sunday the","Monday the","Tuesday the","Wednesday the","Thursday the","Friday the","Saturday the"];
+var months = [" of January, year of "," of February, year of "," of March, year of "," of April, year of "," of May, year of "," of June, year of "," of July, year of "," of August, year of "," of September, year of "," of October, year of "," of November, year of "," of December, year of "];
+var dates = [" 0th"," 1st"," 2nd"," 3rd"," 4th"," 5th"," 6th"," 7th"," 8th"," 9th"," 10th"," 11th"," 12th"," 13th"," 14th"," 15th"," 16th"," 17th"," 18th"," 19th"," 20st"," 21nd"," 22rd"," 23th"," 24th"," 25th"," 26th"," 27th"," 28th"," 29th"," 30st"," 31st"]
+document.getElementById("demo").innerHTML = "Message intercepted on " + days[d.getDay()] + dates[d.getDate()] + months[d.getMonth()] + d.getFullYear()
+document.getElementById("change").innerHTML = "Listen, you have to leave. Go to the about page and scroll down. You'll understand. The password is Lilwawtk-l-w. Quick, they might cut me off from y-"
+mySound = new sound("stealing.mp3")
+sleep(10);
+mySound.play();
+}
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
+</script>
+<script type="text/javascript">var _cd_options = { animation: 'bottomBar' };</script>
+<footer>
+<p class="footer">Copyright to nobody whatsoever. Please don't steal.</p>
+<p class="footer">Est. 2017 by Aidan Gold, TestSite inc.</p>
+<a class="footer" href="https://www.w3schools.com">My copilot on this journey, W3Schools.com</a>
+</footer>
+</body>
+</html>

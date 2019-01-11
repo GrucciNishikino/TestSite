@@ -1,0 +1,243 @@
+<html id="element">
+<link rel="icon" type="image/ico" href="logo.ico" sizes="32x32">
+<meta charset="UTF-8">
+<head>
+<title>Run From the Cops</title>
+<img class="picture" id="gameover" width="220" height="277" src="gameover.png" alt="Game Over">
+<img class="picture" id="win" width="166" height="166" src="win.png" alt="You Win!">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "25px Consolas";
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.2,"orange");
+grd.addColorStop(0.4,"yellow");
+grd.addColorStop(0.6,"green");
+grd.addColorStop(0.8,"blue");
+grd.addColorStop(1,"purple");
+ctx.fillStyle=grd
+ctx.fillText("Super Crazy",5,30);
+ctx.fillText("Coding Maniac",15,60)
+ctx.fillText("Deluxe Site 4",5,90)
+sleep(100)
+//Uncomment the following to show errors.
+//window.onerror=function(msg, url, linenumber){
+	//alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber)
+	//return true
+//}
+</script>
+<ul>
+  <li><a class="active" href="Home.html">Home</a></li>
+  <li><a href="About.html">About</a></li>
+  <li><a href="Stupidity.html">Stupidity</a></li>
+  <li><a href="Games.html">Games</a></li>
+  <li><a href="actuallygoodtext.html">Text Demo</a></li>
+</ul>
+</head>
+<body onload="window.setInterval(randomize, 30)">
+<canvas id="gameBoard"></canvas>
+<script type="text/javascript" src="myGame.js"></script>
+<h1>Soundtrack</h1>
+<p>Babby Game theme: A mix of Hot Butter - Popcorn and Vinesauce Vinny saying "How Com you play Babby Gamsss?" :<a href="https://www.youtube.com/watch?v=YK3ZP6frAMc">Source of Popcorn</a> ... and <a href="https://www.youtube.com/watch?v=MzNNTexnZQ0">Source of Babby Game</a> (<em>PG</em>)</p>
+<audio controls>
+	<source src="bgm3.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>Easy, Normal, and Hard Mode theme: Kevin Macleoud's Kick Shock :<a href="http://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100523">Source</a></p>
+<audio controls>
+  <source src="bgm.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>Nightmare Mode theme: Two Steps from Hell's Archangel :<a href="https://www.youtube.com/watch?v=dJ-QLl5qjLg">Source</a></p>
+<audio controls>
+  <source src="bgm2.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>Endless Mode theme: TheSuperMarioBros2's Pi Black MIDI :<a href="https://www.youtube.com/watch?v=ZQ7ipUQoik8">Source</a></p>
+<audio controls>
+	<source src="bgm4.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>Royal Flush theme: A MIDI file generated from a picture of the Jack of Spades using <a href="https://i2sm.en.softonic.com/?ex=DSK-309.5">I2SM</a>, the image to midi program. <a href="https://thecardsoflife.com/wp-content/images/cod-js.jpg">Image source</a></p>
+<audio controls>
+	<source src="bgm5.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>H O R R I B L E theme: Hot Butter - Popcorn TeChNo Remix :<a href="https://www.youtube.com/watch?v=vjSbJGrAXa0">Source</a></p>
+<audio controls>
+	<source src="bgm6.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p>Multiplayer Themes: Possible Theme by Me :<a href="https://www.audiotool.com/track/possible_track/">Source</a></p>
+<audio controls>
+	<source src="bgm7.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<p id="obfuscate7">This is an easter egg! Now, I have a question. WHAT ARE YOU DOING HERE? GET OUT OF MY HTML!!!</p>
+<audio id="obfuscate6" style="display: none;" controls>
+	<source src="bgm8.mp3" type="audio/mpeg">
+Your browser does not support the audio element. :(
+</audio>
+<table>
+	<tr>
+		<th colspan="3">Modes of Play</th>
+	</tr>
+	<tr>
+		<th>
+			<div class="dropdown">
+				<button class="dropbtn">Normal Gamemodes</button>
+				<div class="dropdown-content">
+					<button class="button" onclick=startGame4()><span>Babby Game</span></button>
+					<button class="button" onclick=startGame2()><span>Easy Mode</span></button>
+					<button class="button" onclick=startGame3()><span>Normal Mode</span></button>
+					<button class="button" onclick=startGame()><span>Hard Mode</span></button>
+					<button class="button" onclick=startGame5()><span>Nightmare Mode</span></button>
+					<button class="button" id="obfuscate5" style="display: none;" onclick=ultimateStart()><span>Click to play Ultimate Mode</span></button>
+				</div>
+			</div>
+		</th>
+		<th>
+			<div class="dropdown">
+				<button class="dropbtn">Challenge Gamemodes</button>
+				<div class="dropdown-content">
+					<button class="button" onclick=endlessStart()><span>Endless Mode</span></button>
+					<button class="button" onclick=jacksStart()><span>Royal Flush</span></button>
+					<button class="button" onclick=instadeathStart()><span>H O R R I B L E</span></button>
+				</div>
+			</div>
+		</th>
+		<th>
+			<div class="dropdown">
+				<button class="dropbtn">Multiplayer Gamemodes</button>
+				<div class="dropdown-content">
+					<button class="button" onclick=vsStart()><span>Cops n' Robbers</span></button>
+					<button class="button" onclick=coOpStart()><span>Partners in Crime</span></button>
+					<button class="button" onclick=surviveCoOpStart()><span>Partners Endless</span></button>
+				</div>
+			</div>
+		</th>
+	</tr>
+</table>
+<!--Add new button for each gamemode.-->
+<canvas id="gameBoard2"></canvas>
+<br>
+<img width="100" height="100" src="bank.png" alt="bank">
+<h1>Story</h1>
+<p>You just robbed a bank. The cops are on your tail though. You need to get away. Use WASD to control the burglar, and get away! Be careful, though! If the cops catch you, you get thrown in jail with a loan shark of yours!</p>
+<p>The only way to get away is to steal a nearby car that is driving away. Afterwards, you commit other crimes, and get chased down again, this time with more cops, or faster cops!</p>
+<h1>Cop Descriptions:</h1>
+<h2>Speedy:</h2>
+<p>Fastest, directly chases you.</p>
+<br>
+<h2>Dimmy:</h2>
+<p>Has absolutely no clue what he is doing.</p>
+<br>
+<h2>Slowclimb:</h2>
+<p>A slower version of speedy, except he goes uproad very slowly.</p>
+<br>
+<h2>Gummy:</h2>
+<p>Moves pseudo-relative to you.</p>
+<br>
+<h2>Darko:</h2>
+<p>His speed is directly related to his position. The chief of police.</p>
+<br>
+<h2>Tank:</h2>
+<p>Starts off slow, but gets <i>much</i> faster as time goes on.</p>
+<br>
+<h2>Warper:</h2>
+<p class="blur">Warps around to try and catch you. Usually fails, but tries anyways. Wears a purple warp cap.</p>
+<br>
+<h2>Jack of All Trades:</h2>
+<p>Randomly behaves like one of the others, while changing every 3-5 seconds.</p>
+<br>
+<h2>The Getaway:</h2>
+<p>Not actually a cop, but a bystander. He is stuck in the middle of this, so you must get to his car to get away!</p>
+<h1>Gamemodes:</h1>
+<h2>Babby Game</h2>
+<p>Why you play babby game? <i>Painfully</i> easy to play. Doesn't contain Jack or Warper, and The Getaway is easy to catch. Simple bank robbery.</p>
+<h2>Easy</h2>
+<p>Not too easy, but still easy. Doesn't contain Jack or Warper, and has the advanced Getaway AI, but The Getaway is slow. Another bank robbery.</p>
+<h2>Normal</h2>
+<p>Well rounded difficulty, which has the fast-ish advanced Getaway AI, but still doesn't have Jack or Warper. This time a bigger bank was robbed.</p>
+<h2>Hard</h2>
+<p>Pretty difficult. The Getaway AI is smart, and also fast, as well as having Jack and Warper. You just vandalized some things this time.</p>
+<h2>Nightmare</h2>
+<p><b><i>Extremely</i></b> difficult. All enemies have increased speed, and the Getaway is <i>very</i> fast. I recommend that you have mastered Hard first. Now you have taken over an office and held hostages for ransom.</p>
+<h2>Endless Mode</h2>
+<p>A constant stream of enemies appear. You also get a score. Now, you've really done it. You've trapped yourself on the interstate everything started at.</p>
+<h2>Royal Flush</h2>
+<p>8 Jacks of All Trades. You've escaped the prison you were in.</p>
+<h2>H O R R I B L E</h2>
+<p>7 Tanks, except <i>REALLY</i> fast. As well as the Jack of All Trades. Now you're going to be up for the death penalty.</p>
+<h2>Cops n' Robbers</h2>
+<p>One player is a burglar, and one is a cop. Player 1, try to escape before the cops get you! Player 2, try to catch the burglar before they escape!</p>
+<h2>Partners in Crime</h2>
+<p>Both players are burglars, running from the cops.</p>
+<h2>Partners Endless</h2>
+<p>Both players are burglars, running from the cops, except it is <em>endless</em>.</p>
+<h2 id="obfuscate"></h2>
+<p id="obfuscate2"></p>
+<p id="obfuscate3"></p>
+<p id="obfuscate4"></p>
+<script>
+var x = 0;
+function randomize() {
+	if (x == 0) {
+		var rand=Math.random().toString(36).substr(2,50);
+		var rand2=Math.random().toString(10).substr(2,10);
+		var rand3=Math.random().toString(19).substr(6,18);
+		document.getElementById("obfuscate").innerHTML = rand + rand
+		document.getElementById("obfuscate2").innerHTML = rand3 + rand + rand
+		document.getElementById("obfuscate3").innerHTML = rand + rand2 + rand
+		document.getElementById("obfuscate4").innerHTML = rand + rand + rand
+		document.getElementById("obfuscate5").innerHTML = rand2 + rand + rand3
+		document.getElementById("obfuscate6").innerHTML = rand2 + rand + rand3
+		document.getElementById("obfuscate7").innerHTML = rand2 + rand3 + rand
+	} else {
+		document.getElementById("obfuscate").innerHTML = "Ultimate Mode:"
+		document.getElementById("obfuscate2").innerHTML = "You have unlocked ultimate mode. Good job."
+		document.getElementById("obfuscate3").innerHTML = "There is now a 9th enemy, and he is <em>RELENTLESS</em>"
+		document.getElementById("obfuscate4").innerHTML = "Press the button in the menu to play this <em><strong>Monstrosity</strong></em> of an endless gamemode."
+		document.getElementById("obfuscate5").style.display = "block";
+		document.getElementById("obfuscate5").innerHTML = "Ultimate Game";
+		document.getElementById("obfuscate6").style.display = "block";
+		document.getElementById("obfuscate7").innerHTML = "Ultimate Game theme: Lux Aeterna by Clint Mansell. <a href='https://www.youtube.com/watch?v=bbS-Zhz31CA'>Source</a>";
+	}
+}
+<!--hide
+function passcode() {
+	var password;
+	var pass1="8XhFgN";
+	password=prompt('Enter Password To View Page',' ');
+	if (password==pass1) {
+		alert('Correct password, click OK to begin the final level.');
+		x=1;
+	}
+	else
+	{
+		alert("Incorrect password. Try again.")
+	}
+}
+//-->
+</script>
+<br>
+<button class="button" onclick=passcode()>Access Final Level</button>
+<footer>
+<p class="footer">Copyright to nobody whatsoever. Please don't steal.</p>
+<p class="footer">Est. 2017 by Aidan Gold, TestSite inc.</p>
+<a class="footer" href="https://www.w3schools.com">My copilot on this journey, W3Schools.com</a>
+</footer>
+</body>
+</html>

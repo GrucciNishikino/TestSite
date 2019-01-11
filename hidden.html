@@ -1,0 +1,29 @@
+<h1>NEWD NEWTS</h1>
+<p>Please enter the password to enter.</p>
+<script>
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "layered") {
+alert('You Got it Right!');
+window.open('hidden2.html');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect. Closing page for your Safety...','Password');
+window.close();
+}
+if (pass1.toLowerCase()!="password" & testV ==3)
+history.go(-1);
+return " ";
+} 
+</script>
+<center>
+<form>
+<input type="button" value="Enter Protected Area" onClick="passWord()">
+</form>
+</center>

@@ -1,0 +1,215 @@
+<html>
+<head>
+<title>The Soviet Onion Homepage</title>
+<link rel="stylesheet" type="text/css" href="sovietstyle.css">
+<link rel="icon" type="image/ico" href="onion.ico">
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<button class="sovietbutton" onclick="draw()">Show Flag</button>
+<script>
+function draw() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#0000FF";
+    ctx.fillRect(0,0,66,100);
+    ctx.fillStyle = "#b82828";
+    ctx.fillRect(133,0,200,100);
+    ctx.fillStyle = "#399599";
+    ctx.fillRect(66,0,67,100);
+    ctx.beginPath();
+    ctx.arc(99.5,50,33,0,2*Math.PI);
+    ctx.fillStyle = "#E30B5D";
+    ctx.fill();
+    ctx.stroke();
+    alert("You have activated the flag.")
+	var text;
+	var x;
+	var tasksDone = prompt("I assume you have done your tasks, yes?");
+	switch(tasksDone) {
+		case "Yes":
+			x=0;
+			text = "Excelent! Please, proceed.";
+			break;
+		case "No":
+			x=0;
+			text = "Well leave the page and go do them, then!";
+			window.location.href = 'Home.html'
+			break;
+		case "I quit":
+			x=0;
+			text = "Really? Are you sure you don't want to protect the internet? I suppose you don't want to, but you know too much. Goodbye.";
+			txt = "a";
+			while(1){
+				txt = txt += "a";    //add as much as the browser can handle
+			}
+			break;
+		case "I was canceled":
+			x=0;
+			text = "Well, that sucks. Try them again.";
+			window.location.href = 'Home.html'
+			break;
+		case "Please stop asking me every time I come here":
+			x=0;
+			text = "I'm sorry! I'm just a javascript task registration program!";
+			document.getElementsByClass("sadden").innerHTML = ":("
+			break;
+		case "Shut up":
+			x=0;
+			text = "No! You shut up!";
+			break;
+		case "access code 6":
+			x=1;
+			text = "What? HOW DID YOU GET IN HE----";
+			break;
+		default:
+			x=0;
+			text = "What? I'll just take that as a yes.";
+			break;
+	};
+	if (x !=1) {
+		alert(text)
+	} else {
+		alert(text)
+		var line2 = prompt("");
+		if (line2 = "password series PS 17") {
+			var line3 = prompt("");
+			if (line3 = "reindeer flotilla") {
+				alert("code series LSU-123... activate")
+				alert("code series ESS-999... activate")
+				alert("code series HHH-888... activate")
+				window.location.replace("RealSovietOnion.html");
+			} else {
+				alert("terminating...")
+			}
+		} else {
+			alert("terminating...")
+		}
+	}
+}
+</script>
+</head>
+<body>
+<h1>Clearing up some Misconceptions About Us</h1>
+<p>Hello. We have seen some misconceptions recently about our organization. First off, if you found yourself here, we are a division of the NSA, so why are you here?</p>
+<br>
+<p>Anyways, we aren't trying to take over the world here. We're simply assisting takedowns of illegal websites, white-hat hacking corporations, etcetera. Here is our FAQ and misconception dispeller.</p>
+<br>
+<h4>Why are you pretending to be anonymous?</h4>
+<p>We do this to hide a little bit. Of course, there isn't much security here, since there is nothing for us to hide. Just when we do takedowns.</p>
+<h4>Where did your name come from?</h4>
+<p>An inside joke between a few of our co-workers about a .onion website about communisim.</p>
+<h4>Thanks for answering!</h4>
+<p>You're welcome!</p>
+<br>
+<h1>Japanese Propoganda</h1>
+<p>Joke</p><br>
+<img id="myImage" src="marioidle.png" alt="Propoganda character, Mario, standing still." height="231" width="218">
+<br>
+<button class="sovietbutton" onclick="document.getElementById('myImage').src='mariojumping.png'"><span>Make Mario Jump</span></button>
+<button class="sovietbutton" onclick="document.getElementById('myImage').src='marioidle.png'"><span>Make Mario Stand</span></button>
+<br>
+<br>
+<img src="error.png" alt="Error 504: The connection has timed out." height="120" width="270">
+<br>
+<h2 class="centered">Time Until Internet-Wide Domination</h2>
+<!-- Display the countdown timer in an element -->
+<h2 id="demo" class="centered"></h2>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 10, 2018 13:54:37").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<p>Our latest DDoS of an illegal website. It was reported to the NSA.</p>
+<h1>What New Members Should Do</h1>
+<p class="sadden">If you recently joined the Soviet Onion, congratulations! You are a warrior for the internet!
+You are not doing anything illegal at all. Your "job description" includes the following:</p>
+<ul class="sadden">
+    <li class="sadden">Darkweb takedowns</li>
+    <li class="sadden">White-Hat Jobs</li>
+    <li class="sadden">Advertisement</li>
+    <li class="sadden">Scaring off accidental visitors</li>
+    <li class="sadden">Stealing data from Hackers and Virus Programmers</li>
+</ul>
+<p>Remember, you are a G-Man now. You work for the government.</p>
+<h2>How to Write Javascript</h2>
+<p>Javascript is a good entry level language so that you can be more useful to us later.</p>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rK_7ieKjDRc" frameborder="0" allowfullscreen></iframe><br>
+<h2>Member List</h2>
+<table style="width:50%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th> 
+	<th>Codename</th>
+  </tr>
+  <tr>
+    <td>You</td>
+    <td>Yourself</td>
+	<td>Stall</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+	<td>Genisis</td>
+  </tr>
+  <tr>
+    <td>Jim</td>
+    <td>Carlston</td>
+	<td>Karl</td>
+  </tr>
+  <tr>
+    <td>Aric</td>
+    <td>Wilbur</td>
+	<td>Pig</td>
+  </tr>
+  <tr>
+    <td>Astor</td>
+    <td>Alger</td>
+	<td>Pastor A</td>
+  </tr>
+  <tr>
+    <td>Lambert</td>
+    <td>Edwyn</td>
+	<td>Lambs</td>
+  </tr>
+  <tr>
+    <td>Alphonzo</td>
+    <td>Rain</td>
+	<td>Beta Rain</td>
+  </tr>
+</table>
+<br>
+<span>
+    <h1>Advertising Methods:</h1>
+    <p>To advertise for us, use the following pictures.</p><br>
+    <img src="flag.png" alt="Flag Advertisement, Says: JOIN THE SOVIET ONION" style="width: 400px; height: 200px;"><br><br><br><br>
+    <img src="Soviet_Onion.jpg" alt="A picture of an onion in Soviet attire" style="width:400px; height:290px;"><br><br><br><br>
+</span><br>
+<a href="Home.html" class="button"><span>Return to Primary Host</span></a>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<html>
+<head>
+<title>The actual Soviet Onion Page</title>
+<link rel="stylesheet" type="text/css" href="sovietstyle.css">
+<link rel="icon" type="image/ico" href="onion.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<style>
+#mydiv {
+    position: absolute;
+    z-index: 9;
+	width: 20%;
+	height: 70%;
+    background-color: #f8f5e1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+}
+
+#mydivheader {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #aff0e0;
+    color: #f3c06f;
+}
+div span {
+	color: #ff4d60;
+}
+</style>
+<script>
+//Make the DIV element draggagle:
+dragElement(document.getElementById(("mydiv")));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+</head>
+<body>
+<h2><div class="centered">Time Until World-Wide Domination</div><h2>
+<!-- Display the countdown timer in an element -->
+<h2><div id="demo" class="centered2"></div><h2>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 1, 2018 13:54:37").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+var i = 0;
+var txt = "Are you truly a member of this part?"; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+	if (i < txt.length) {
+		document.getElementById("typeSlow").innerHTML += txt.charAt(i);
+		i++;
+		setTimeout(typeWriter, speed);
+	} else {
+		var text;
+		var question = prompt("test");
+		switch(question) {
+			case "yes":
+				text = "Please visit"
+				break;
+			case "no":
+				text = "Ah."
+				break;
+			default:
+				text = "GET OUT"
+		}
+	}
+}
+</script>
+<br>
+<div id="mydiv">
+  <div id="mydivheader">The Plan for</div>
+  <p>Taking over</p>
+  <br>
+  <p>the world</p>
+  <br>
+  <p>and ruling it.</p>
+</div>
+<p style="text-align: center"></p>
+<p>Step 1. Trick people into </p>
+<p>joining the "NSA"</p>
+<p>Step 2. Use them to</p>
+<p>gather IPs worldwide</p>
+<p>Step 3. Tell others</p>
+<p>that we plan to <span style="background-color: #a3a3a3;">protect them.</span></p>
+<p>Step 4. Release our malware</p>
+<p>into the wild to <span style="background-color: #a3a3a3;">steal every file and encrypt it.</span></p>
+<div style="text-align: center;"><button class="sovietbutton" onclick="typeWriter()">Verify</button></div>
+<div style="text-align: center;"><p id="typeSlow"></p></div>
+<p>Step 5. Demand money from everybody</p>
+<p>and demand control over the internet.</p>
+<p>Step 6. Remove Net Neutrality</p>
+<p>Step 7. Use new power to cause pain.</p>
+<script>
+jQuery(function($) {
+    var characters = "!@#$%^&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character").each(changeCharacter)
+	}, 60);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&*01234678BDEFGHIJKLMNPQRSTUVWXYZabcefghijklmnopqrsvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character2").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character2").each(changeCharacter)
+	}, 120);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character3").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character3").each(changeCharacter)
+	}, 90);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character4").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character4").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character5").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character5").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character6").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character6").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character7").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character7").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character8").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character8").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character9").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character9").each(changeCharacter)
+	}, 90);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&*0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character10").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character10").each(changeCharacter)
+	}, 60);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&*01234678BDEFGHIJKLMNPQRSTUVWXYZabcefghijklmnopqrsvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character11").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character11").each(changeCharacter)
+	}, 120);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character12").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character12").each(changeCharacter)
+	}, 90);
+});
+jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character13").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character13").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character14").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character14").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character15").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character15").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character16").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character16").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character17").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character17").each(changeCharacter)
+	}, 90);
+});jQuery(function($) {
+    var characters = "!@#$%^&0123456789ABDEFGHIJKLMNOQRSTUVWXYZabcdefhijklmnorstuvwxyz";
+    
+    function changeCharacter() {
+        var randomIndex = Math.floor(characters.length * Math.random());
+        var randomCharacter = characters[randomIndex];
+        $(".character18").text(randomCharacter);
+    }
+	window.setInterval(function () {
+		$(".character18").each(changeCharacter)
+	}, 90);
+});
+//Make the DIV element draggagle:
+dragElement(document.getElementById(("mydiv")));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    /* if present, the header is where you move the DIV from:*/
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    /* otherwise, move the DIV from anywhere inside the DIV:*/
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    /* stop moving when mouse button is released:*/
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+<br><br><br><br><br><br>
+<div class="hide" style="text-align: center;"><span class="character" >W</span><span class="character2" >h</span><span class="character3" >a</span><span class="character4" >t</span><span class="character5" >i</span><span class="character6 >s</span><span class="character7 >l</span><span class="character8" >o</span><span class="character9" >v</span><span class="character10" >e</span><span class="character11" >?</span><span class="character12" >i</span><span class="character13" >s</span><span class="character14" >o</span><span class="character15" >g</span><span class="character16" >r</span><span class="character17" >a</span><span class="character18" >m</span></div>
+<p class="hidden"></p>
+<span><img src="flag.png"><img src="onion.ico"><img src="onion.ico"><img src="flag.png"><img src="onion.ico"><img src="onion.ico"><img src="onion.ico"><img src="onion.ico"><img src="flag.png"><img src="onion.ico"><img src="onion.ico"><img src="flag.png"></span>
+</body>
+</html>

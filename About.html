@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>About this Website</title>
+<link rel="icon" type="image/ico" href="logo.ico" sizes="32x32">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "25px Consolas";
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.2,"orange");
+grd.addColorStop(0.4,"yellow");
+grd.addColorStop(0.6,"green");
+grd.addColorStop(0.8,"blue");
+grd.addColorStop(1,"purple");
+ctx.fillStyle=grd
+ctx.fillText("Super Crazy",5,30);
+ctx.fillText("Coding Maniac",15,60)
+ctx.fillText("Deluxe Site 4",5,90)
+</script>
+<ul>
+  <li><a class="active" href="Home.html">Home</a></li>
+  <li><a href="About.html">About</a></li>
+  <li><a href="Stupidity.html">Stupidity</a></li>
+  <li><a href="Games.html">Games</a></li>
+  <li><a href="actuallygoodtext.html">Text Demo</a></li>
+</ul>
+</head>
+<body>
+<h1>About This Incredibly Stupid Site and SHUT UP CHARLES!</h1>
+<h2>Why did you make this site?</h2>
+<p>I made this site because I am an avid programmer, starting when I was 8 with BASIC, and now working with C languages, Java, and of course, HTML.</p>
+<h2>Could I have some help making my-</h2>
+<p>NO. I don't do personal requests. I do open source stuff, and present other people's open source stuff. Go away.</p>
+<h2>Why<h3>are<h4>these<h5>headers</h5><h5>nested</h5></h4><h4>within</h4></h3><h3>each</h3></h2><h2>other?</h2>
+<p>Ummm..... I don't know.... heh...</p>
+<h2>What is all this stuff?</h2>
+<p>I can't explain it here.</p>
+</body>
+<footer>
+<p class="footer">Copyright to nobody whatsoever. Please don't steal.</p>
+<p class="footer">Est. 2017 by Aidan Gold, TestSite inc.</p>
+<a class="footer" href="https://www.w3schools.com">My copilot on this journey, W3Schools.com</a>
+</footer>
+</html>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<script>
+function passWord() {
+var testV = 1;
+var pass1 = prompt('Please Enter Your Password',' ');
+while (testV < 3) {
+if (!pass1) 
+history.go(-1);
+if (pass1.toLowerCase() == "lilwawtk-l-w") {
+alert('You Got it Right!');
+window.open('hidden.html');
+break;
+} 
+testV+=1;
+var pass1 = 
+prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+}
+if (pass1.toLowerCase()!="password" & testV ==3)
+history.go(-1);
+return " ";
+} 
+</script>
+<center>
+<form>
+<input type="button" class="button" value="Enter Protected Area" onClick="passWord()">
+</form>
+</center>

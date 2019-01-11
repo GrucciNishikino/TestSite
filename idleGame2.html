@@ -1,0 +1,38 @@
+<html id="element">
+<head>
+<title>Web Design Idle</title>
+<link rel="icon" type="image/ico" href="logo.ico" sizes="32x32">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<canvas id="myCanvas" width="200" height="100"></canvas>
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.font = "25px Consolas";
+var grd=ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(0.2,"orange");
+grd.addColorStop(0.4,"yellow");
+grd.addColorStop(0.6,"green");
+grd.addColorStop(0.8,"blue");
+grd.addColorStop(1,"purple");
+ctx.fillStyle=grd
+ctx.fillText("Super Crazy",5,30);
+ctx.fillText("Coding Maniac",15,60)
+ctx.fillText("Deluxe Site 4",5,90)
+</script>
+<ul>
+  <li><a class="active" href="Home.html">Home</a></li>
+  <li><a href="About.html">About</a></li>
+  <li><a href="Stupidity.html">Stupidity</a></li>
+  <li><a href="Games.html">Games</a></li>
+  <li><a href="actuallygoodtext.html">Text Demo</a></li>
+</ul>
+</head>
+<body>
+<iframe width="50%" height="620" src="https://jsfiddle.net/kernelpanix/vhuLr7nn/embedded/result" allowfullscreen="allowfullscreen" frameborder="0"></iframe><p>As you can see, this came from JSFiddle. The link, of course, is <i>already here!</i> So are the credits! Thanks JSFiddle for the Embed Link!</p>
+<footer>
+<p class="footer">Copyright to nobody whatsoever. Please don't steal.</p>
+<p class="footer">Est. 2017 by Aidan Gold, TestSite inc.</p>
+<a class="footer" href="https://www.w3schools.com">My copilot on this journey, W3Schools.com</a>
+</footer>
+</body>
