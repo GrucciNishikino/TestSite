@@ -113,20 +113,27 @@ function typeWriter() {
 		document.getElementById("typeSlow").innerHTML += txt.charAt(i);
 		i++;
 		setTimeout(typeWriter, speed);
-	} else {
-		var text;
-		var question = prompt("test");
-		switch(question) {
-			case "yes":
-				text = "Please visit"
-				break;
-			case "no":
-				text = "Ah."
-				break;
-			default:
-				text = "GET OUT"
-		}
 	}
+}
+var text;
+var txt;
+var question = prompt("test");
+switch(question) {
+	case "yes":
+		text = "Please visit <a href="piggyclone205.github.io">this</a> page.";
+		typeWriter(text);
+		break;
+	case "no":
+		text = "Ah. Die.";
+		typeWriter(text);
+		txt = "a";
+		txt += "a";
+		break;
+	default:
+		text = "GET OUT";
+		typeWriter(text);
+		txt = "a";
+		txt += "a";
 }
 </script>
 <br>
